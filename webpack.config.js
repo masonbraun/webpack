@@ -12,10 +12,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const precss       = require('precss');
 const autoprefixer = require('autoprefixer');
 
-
-
-
-
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build')
@@ -81,7 +77,7 @@ if(TARGET === 'start' || !TARGET) {
         {
           // Test expects a RegExp! Note the slashes!
           test: /\.scss$/,
-          loaders: ['style', 'css', 'sass', 'postcss'],
+          loaders: ['style', 'css', 'sass'],
           // Include accepts either a path or an array of paths.
           include: PATHS.app
         },
@@ -156,7 +152,8 @@ if(TARGET === 'build' || TARGET === 'stats') {
         },
         {
           test: /\.(jpg|png)$/,
-          loader: 'url?limit=200',
+          // loader: 'url?limit=200',
+          loader: "url-loader?limit=5000&name=img/img-[name]-[hash:6].[ext]",
           include: PATHS.app
         }
       ]

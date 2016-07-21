@@ -1,16 +1,20 @@
+@import 'mixins.scss';
+
 body {
   background: black;
   background: url("../images/test.jpg") repeat;
+  color: $blue;
+  // @include vertical-align();
 
+  // p {
+  //   color: white;
+  //   border: solid 1px purple;
+  //   display: flex;
+  //   border-radius: 20px;
+  //   display: block;
+  //   background-color: red;
+  //   width: 400px;
+  //   height: 500px !important;
 
-  p {
-    color: white;
-    border: solid 1px purple;
-    display: flex;
-    border-radius: 20px;
-    display: block;
-    background-color: red;
-    width: 400px;
-    height: 500px;
-  }
+  // }
 }

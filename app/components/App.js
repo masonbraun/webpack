@@ -1,10 +1,19 @@
+import React from 'react';
+
+//import components
+
+import Note from './Note/Note';
+
+//import styles
+import '../styles/reset.scss';
 import '../styles/App.scss';
 
-import React from 'react';
-import Note from './Note';
+const App = ({posts, comments}) => (
+  <div>
+    {posts.map((post, i) => <Note key={i} test={post.caption} />)}
+  </div>
+)
 
-export default class App extends React.Component {
-  render() {
-    return <Note />;
-  }
-}
+export default App;
+
+//presentational component has no lifecycle methods, and just returns UI
